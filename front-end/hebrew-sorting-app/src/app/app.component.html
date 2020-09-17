@@ -1,0 +1,18 @@
+<mat-toolbar class="hsa-header">
+  <span>Hebrew Sorting App</span>
+</mat-toolbar>
+
+<div class="hsa-body">
+  <h1>Welcome to the Hebrew sorting app!</h1>
+  <h2>Enter your text then click Sort to sort the input in the Hebrew order</h2>
+  <textarea [(ngModel)]="text" matInput placeholder="Put your text here..."></textarea>
+  <button mat-raised-button (click)="onSort()">Sort</button>
+  <textarea *ngIf="sorted_text" disabled> {{ sorted_text }} </textarea>
+  <a href="{{ source_code_link }}">Click here to view the source code</a>
+</div>
+
+<footer class="hsa-footer">
+  <div>
+    <span> © Sara Prager </span>
+  </div>
+</footer>

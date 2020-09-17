@@ -1,0 +1,9 @@
+{
+  "name": "hebrew-sorting-app",
+  "version": "1.0.0",
+  "description": "a simple serverless application for sorting a text in the hebrew order",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Sara Prager",
+  "license": "ISC"
+}
