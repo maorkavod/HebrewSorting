@@ -1,0 +1,27 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Transform": "AWS::Serverless-2016-10-31",
+    "Description": "serverless app using Node.js",
+    "Resources": {
+        "NodeJSLambda": {
+            "Type": "AWS::Serverless::Function",
+            "Properties": {
+                "CodeUri": "../back-end/",
+                "FunctionName": "HebrewSortingFunction",
+                "Handler": "index.handler",
+                "MemorySize": 128,
+                "Runtime": "nodejs12.x",
+                "Timeout": 3,
+                "Events": {
+                        "ApiEvent": {
+                            "Type": "Api",
+                            "Properties": {
+                                "Path": "/sort-text",
+                                "Method": "post"
+                            }
+                        }        
+                }
+            }
+        }
+    }
+}

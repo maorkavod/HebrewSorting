@@ -4,6 +4,8 @@
   "description": "a simple serverless application for sorting a text in the hebrew order",
   "main": "index.js",
   "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
   "author": "Sara Prager",
   "license": "ISC"
 }
