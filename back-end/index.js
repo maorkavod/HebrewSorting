@@ -31,13 +31,47 @@ exports.handler = async (event) => {
     return hebrewComparator(a.slice(1), b.slice(1));
   }
 
-  // get and validate the input
-  const input = event['input'];
-  if (!input || typeof input !== 'string') {
-    return { statusCode: 400, body: 'invalid_input_validation_err' }
+  // a wrapper for JSON.parse method, return false instead of exception
+  function parseJson(obj) {
+    try {
+        return JSON.parse(obj);
+    } catch (e) {
+        return false;
+    }
+  }
+
+  // return a standard error response
+  function formatErrorResponse(msg) {
+    return {
+      statusCode: 400,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 'err': msg })
+    }; 
+  }
+
+  // return a standard valid response
+  function formatValidResponse(output) {
+    return {
+      statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 'output': output })
+    };
+  }
+
+  // extract and validate the input  
+  const body = event && event.body && parseJson(event.body);
+  if (!body) {
+    return formatErrorResponse('invalid_request_body_err'); 
+  }
+  const input = body.input;
+  if (!input) {
+    return formatErrorResponse('missing_input_err');
+  }
+  if (typeof input !== 'string') {
+    return formatErrorResponse('invalid_input_err');
   }
 
   // sort the input and return the result
   const sorted_text = input.replace(/[^A-Za-z\s]/g, '').split(' ').sort(hebrewComparator).join(' ').trim();
-  return { statusCode: 200, body: sorted_text };
+  return formatValidResponse(sorted_text);
 };
