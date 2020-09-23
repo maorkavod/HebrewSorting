@@ -1,13 +1,13 @@
 # Hebrew Sorting
 a basic serverless app for sorting a text in the Hebrew order
 
-**Technology Stack**
-# Back-End
-AWS Lambda and Api Gateway (using AWS SAM)
-
+# Technology Stack
+**Back-End**
 Node.js
 
-# Front-End
+AWS Lambda and API Gateway (using AWS SAM)
+
+**Front-End**
 Angular, Angular Material
 
 AWS S3
