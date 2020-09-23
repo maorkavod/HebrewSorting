@@ -29,7 +29,7 @@ export class AppComponent {
         (response: any) => {
           this.sorted_text = response.output;
         }, (error) => {
-          // TODO: localization to error messages
+          // TODO: localization for error messages
           this.showErrMsg('Invalid text. Please try again');
       });
   }

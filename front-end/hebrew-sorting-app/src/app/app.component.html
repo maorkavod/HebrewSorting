@@ -4,9 +4,9 @@
 
 <div class="hsa-body">
   <h1>Welcome to the Hebrew Sorting App!</h1>
-  <h2>Enter your text then click 'Sort!'</h2>
+  <h2>Enter your text then click 'Sort'</h2>
   <textarea [(ngModel)]="text" matInput placeholder="Put your text here..."></textarea>
-  <button mat-raised-button (click)="onSort()">Sort!</button>
+  <button mat-raised-button (click)="onSort()">Sort</button>
   <textarea *ngIf="sorted_text" disabled> {{ sorted_text }} </textarea>
   <a href="{{ source_code_link }}">Click here to view the source code</a>
 </div>

@@ -58,7 +58,7 @@ exports.handler = async (event) => {
     };
   }
 
-  // extract and validate the input  
+  // extract and validate the input
   const body = event && event.body && parseJson(event.body);
   if (!body) {
     return formatErrorResponse('invalid_request_body_err');
