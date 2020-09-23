@@ -10,7 +10,7 @@ exports.handler = async (event) => {
     }
 
     // a is a prefix of b, b is the winner
-    if (a.length == 0) {
+    if (a.length === 0) {
       return -1;
     }
 

@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AppComponent {
   text: string;
   sorted_text: string;
-  source_code_link: string = 'https://github.com';
+  source_code_link: string = 'https://github.com/SaraPrager/HebrewSorting';
   constructor(private _snackBar: MatSnackBar, private _httpClient: HttpClient) {
   }
 
