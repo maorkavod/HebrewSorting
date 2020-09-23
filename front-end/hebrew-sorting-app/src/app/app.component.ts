@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   // TODO: move to config
-  API_URL: string = 'https://o923koduk6.execute-api.us-east-1.amazonaws.com/Prod';
+  API_URL: string = 'https://unifzensig.execute-api.us-east-1.amazonaws.com/Prod/sort-text/';
 
   onSort() {
     if (!this.text) {

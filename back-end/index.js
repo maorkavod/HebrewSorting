@@ -44,7 +44,7 @@ exports.handler = async (event) => {
   function formatErrorResponse(msg) {
     return {
       statusCode: 400,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "*", "Access-Control-Allow-Methods": "*" },
       body: JSON.stringify({ 'err': msg })
     }; 
   }
@@ -53,7 +53,7 @@ exports.handler = async (event) => {
   function formatValidResponse(output) {
     return {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', "Access-Control-Allow-Headers": "*", "Access-Control-Allow-Methods": "*" },
       body: JSON.stringify({ 'output': output })
     };
   }
@@ -61,7 +61,7 @@ exports.handler = async (event) => {
   // extract and validate the input  
   const body = event && event.body && parseJson(event.body);
   if (!body) {
-    return formatErrorResponse('invalid_request_body_err'); 
+    return formatErrorResponse('invalid_request_body_err');
   }
   const input = body.input;
   if (!input) {
